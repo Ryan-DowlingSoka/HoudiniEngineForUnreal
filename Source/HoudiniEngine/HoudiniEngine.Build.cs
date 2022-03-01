@@ -340,7 +340,9 @@ public class HoudiniEngine : ModuleRules
                     "Messaging",
                     "SlateNullRenderer",
                     "EditorFramework",
-                    "SubobjectEditor"
+					// @THE_COALITION_CHANGE: raparmar@microsoft.com - BEGIN - [Updated for new interfaces]
+					"SubobjectEditor"
+					// @THE_COALITION_CHANGE: raparmar@microsoft.com - END - [Updated for new interfaces]
                 }
             );
         }

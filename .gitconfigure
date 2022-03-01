@@ -1,0 +1,4 @@
+[difftool "bc"]
+path = "C:/Program Files (x86)/Beyond Compare 3/BComp.exe"
+cmd = "C:/Program Files (x86)/Beyond Compare 3/BComp.exe" "$LOCAL" "$REMOTE"
+

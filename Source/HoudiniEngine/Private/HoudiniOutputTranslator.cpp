@@ -64,6 +64,17 @@
 
 #define LOCTEXT_NAMESPACE HOUDINI_LOCTEXT_NAMESPACE
 
+//@THE_COALITION_CHANGE: raparmar@microsoft.com - BEGIN [Fix nounity]
+//#if PLATFORM_WINDOWS
+
+// Of course, Windows defines its own GetGeoInfo,
+// So we need to undefine that before including HoudiniApi.h to avoid collision...
+//#ifdef GetGeoInfo
+//#undef GetGeoInfo
+//#endif
+//#endif
+//@THE_COALITION_CHANGE: raparmar@microsoft.com - END [Fix nounity]
+
 // 
 bool
 FHoudiniOutputTranslator::UpdateOutputs(
