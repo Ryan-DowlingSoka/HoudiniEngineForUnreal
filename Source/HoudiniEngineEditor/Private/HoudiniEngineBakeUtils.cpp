@@ -104,7 +104,6 @@
 #include "Kismet2/ComponentEditorUtils.h"
 
 #include "GeometryCollectionEngine/Public/GeometryCollection/GeometryCollectionComponent.h"
-#include "GeometryCollectionEngine/Public/GeometryCollection/GeometryCollectionDebugDrawComponent.h"
 #include "GeometryCollectionEngine/Public/GeometryCollection/GeometryCollectionObject.h"
 #include "GeometryCollectionEngine/Public/GeometryCollection/GeometryCollectionActor.h"
 
@@ -5444,7 +5443,7 @@ void FHoudiniEngineBakeUtils::CopyPropertyToNewGeometryCollectionActorAndCompone
 	NewGCC->InitialVelocityType = InGCC->InitialVelocityType;
 	NewGCC->InitialLinearVelocity = InGCC->InitialLinearVelocity;
 	NewGCC->InitialAngularVelocity = InGCC->InitialAngularVelocity;
-	NewGCC->PhysicalMaterialOverride = InGCC->PhysicalMaterialOverride;
+//	NewGCC->PhysicalMaterialOverride = InGCC->PhysicalMaterialOverride;
 	
 	if (IsValid(NewActor))
 		NewActor->SetActorHiddenInGame(InGCC->bHiddenInGame);
@@ -6366,12 +6365,10 @@ FHoudiniEngineBakeUtils::BakeBlueprintsFromBakedActors(
 				}
 			}
 		}
-		// TODO: PENDINGKILL replacement ?
 		else if (Asset && !IsValid(Asset))
 		{
 			// Rename to pending kill so that we can use the desired name
 			const FString AssetPendingKillName(BlueprintName + "_PENDING_KILL");
-			// Asset->Rename(*MakeUniqueObjectNameIfNeeded(Package, UBlueprint::StaticClass(), AssetPendingKillName).ToString());
 			RenameAsset(Asset, AssetPendingKillName, true);
 			Asset = nullptr;
 		}
@@ -6783,7 +6780,6 @@ FHoudiniEngineBakeUtils::FindDesiredBakeActorFromBakeActorName(
 	// If we found an actor and it is pending kill, rename it and don't use it
 	if (FoundActor)
 	{
-		// TODO: PENDINGKILL replacement ?
 		if (!IsValid(FoundActor))
 		{
 			if (bRenamePendingKillActor)

@@ -834,7 +834,6 @@ FUnrealLandscapeTranslator::ConvertLandscapeLayerDataToHeightfieldData(
 
 	// Convert the Int data to Float
 	LayerFloatValues.SetNumUninitialized(SizeInPoints);
-
 	for (int32 nY = 0; nY < HoudiniYSize; nY++)
 	{
 		for (int32 nX = 0; nX < HoudiniXSize; nX++)
@@ -1072,7 +1071,6 @@ FUnrealLandscapeTranslator::ConvertLandscapeDataToHeightfieldData(
 	double ZPositionOffset = LandscapeTransform.GetLocation().Z / 100.0f;
 	// Convert the Int data to Float
 	HeightfieldFloatValues.SetNumUninitialized(SizeInPoints);
-
 	for (int32 nY = 0; nY < HoudiniYSize; nY++)
 	{
 		for (int32 nX = 0; nX < HoudiniXSize; nX++)
